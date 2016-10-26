@@ -45,18 +45,28 @@ On the right side of the R code chunk are additional options, Settings, a down a
 
 
 
+*Sebastes*  
+_Sebastes_
+
+\emph{Sebastes}
+**Sebastes**  
+\textbf{Sebastes}
+
 # Headers
 
-
-
+## Subhead 2
+### Subhead 3 {-}
+#### Subhead 4
+*Subhead 5*
 
 # Commenting
-
+<!-- comment here 
+-->
 
 
 
 # Links
-
+[Github](www.github.com)
 
 
 
@@ -73,10 +83,9 @@ R Markdown are finicky with spacing...
  * Item 2
     + Item 2a
     + Item 2b
-
 -->
 
-<!--
+
 Bulleted list
 \begin{itemize}[noitemsep,nolistsep,topsep=0pt]
 
@@ -85,10 +94,10 @@ Bulleted list
 \item \href{https://cran.r-project.org/bin/windows/base/}{R}
 
 \end{itemize}
--->
 
 
-<!--
+
+
 Numbered list
 \begin{enumerate}[noitemsep,nolistsep,topsep=0pt]
 
@@ -97,19 +106,24 @@ Numbered list
 \item \href{https://cran.r-project.org/bin/windows/base/}{R} 
 
 \end{enumerate}
--->
+
 
 # References and Citations
 
 We can reference a document section, see Lists in Section \ref{lists}.
 
-Citations: [@Love2002]
+Citations: [@Love2002;@Love2002]
+<!--citation key in .bib -->
+
+Love[-@Love2002]
 
 
 #Figure from a file
 You can use any file extension, including PDFs
 
 ![Here's my caption \label{fig:fig_example}](RMarkdownFLow.png)
+
+![Here's my caption \label{fig:fig_example2}](./Figures/RMarkdownFLow1.png)
 
 Figures are referenced using LaTeX syntax \ref{fig:fig_example}.
 
@@ -124,55 +138,69 @@ Now try adding your own picture to the directory, adding it in here, and referen
 
 You can embed an R code chunk like this:
 
-```{r cars, echo=FALSE, include=F}
+```{r cars, echo=FALSE, include=FALSE}
 summary(cars)
 ```
+
 
 
 Play witht the r code chunk options, echo=TRUE, include=FALSE, results='asis'
 
 
 
-
+\FloatBarrier
 
 # Figure from R code chunk
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE, include=FALSE, fig.cap="Figure of something  at $40^\\circ 10^\\prime$. \\label{fig:pressure}"}
+```{r pressure, echo = FALSE, fig.cap="Figure of something  at $40^\\circ 10^\\prime$. \\label{fig:pressure}"}
 plot(pressure)
 ```
 
-Note, you need extra \\s when using LaTeX syntax within an R code chunk, or when inserting a backslash in R markdown.  The same goes with percent signs and any other LaTeX reserved symbol.
+This is inlinemath mode for Latex $40^\circ 10^\prime$
+
+Note, you need extra \\s when using LaTeX syntax within an R code chunk, or when inserting a backslash in R markdown.  The same goes with percent signs and any other LaTeX reserved symbol. You can use a % $\%$
+
+\FloatBarrier
 
 
-
-<!--
 We can now reference Figure \ref{fig:pressure}.  Note where this text ends up.
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
--->
+
 
 
 #Tables
 
-```{r, results='asis', echo=FALSE, include=FALSE}
+```{r, results='asis'}
 #, results='asis', echo=FALSE, include=FALSE, message=FALSE, warning=FALSE
 Tab = read.csv('Table_example.csv')
 
 Tab_example = xtable(Tab, 
                    caption=c('This is where you write your caption'),
-                   label = 'tab:Table_example')
+                   label = 'tab:Table_example',
+                   digits = 1)
 
-print(Tab_example, include.rownames = FALSE, caption.placement = 'top')
+print(Tab_example, include.rownames = FALSE, caption.placement = 'top', scalebox = 0.7)
 
 # print option to try, scalebox = 0.7
 # add alignment
-
+align(Tab_example) = 'lcrcrrcrcrcr'
 
 ```
 
+
+```{r, results='asis'}
+Tab = read.csv('table2.csv')
+Tab_example = xtable(Tab, 
+                   caption=c('Taiwan data'),
+                   label = 'tab:Taiwan',
+                   digits = 2)
+print(Tab_example, include.rownames = FALSE, caption.placement = 'top')
+align(Tab_example) = 'lcrcrrcr'
+```
 
 
 Try changing the R chunk options above. 
@@ -192,7 +220,7 @@ Now, create a table!
 
 
 #Math mode
- <!--
+
 You can use LaTeX math mode both inline and for inserting equations. It's handy for using inline math mode for management measure and lat/long.
 
 Inline looks like this:  $SPR_{40\%}$  
@@ -200,7 +228,7 @@ Inline looks like this:  $SPR_{40\%}$
 
 To get degrees and minutes type: $40^\circ 10^\prime$   
 
--->
 
 #References
+
 
