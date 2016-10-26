@@ -26,15 +26,22 @@ bibliography: BibFile.bib
     # set global options for R code chunks: echo=FALSE (don't include source code); 
     # warning=FALSE (suppress R warnings); message=FALSE (suppress R messages)
     # eval = TRUE is default
+<<<<<<< HEAD
     knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
       library(xtable)
     options(xtable.comment = FALSE)  # turns off xtable comments
+=======
+     knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+      library(xtable)
+      options(xtable.comment = FALSE)  # turns off xtable comments
+>>>>>>> melmonk/master
 ```
 
 Change some of the YAML settings to see what happens.
 
-Notice, the down arrow at line 22.  If you click this, you can hide the R code chunk.  This is helpful when working through a large document.
+Notice, the down arrow at line 25.  If you click this, you can hide the R code chunk.  This is helpful when working through a large document.
 
 On the right side of the R code chunk are additional options, Settings, a down arrow (run previous R code chunks), and a green play button (runs the current chunk).  It's handy to check R code chunks as you go and to debug.  Within the Assessment template, this is also the only way to see variables in your Environment. 
 
@@ -42,17 +49,33 @@ On the right side of the R code chunk are additional options, Settings, a down a
 
 # Epmhasis (R markdown and LaTeX)
 
+*Sebastes*  
+_Sebastes_
+
+\emph{Sebastes}
+
+**_Sebastes_**  
+__Sebastes__  
+\emph{\textbf{Sebastes}}  
 
 
 
 *Sebastes*  
 _Sebastes_
 
+<<<<<<< HEAD
 \emph{Sebastes}
 **Sebastes**  
 \textbf{Sebastes}
 
 # Headers
+=======
+## Subhead 2
+### Subhead 3
+#### Subhead 4
+
+*Subhead 5*
+>>>>>>> melmonk/master
 
 ## Subhead 2
 ### Subhead 3 {-}
@@ -60,19 +83,29 @@ _Sebastes_
 *Subhead 5*
 
 # Commenting
+<<<<<<< HEAD
 <!-- comment here 
 -->
+=======
+
+<!-- comment here  -->
+>>>>>>> melmonk/master
 
 
 
 # Links
+<<<<<<< HEAD
+=======
+
+>>>>>>> melmonk/master
 [Github](www.github.com)
 
 
 
 # Lists
-<!--
-R Markdown are finicky with spacing...
+
+R Markdown are finicky with spacing...     
+
 * Item 1
 * Item 2
     + Item 2a
@@ -83,9 +116,16 @@ R Markdown are finicky with spacing...
  * Item 2
     + Item 2a
     + Item 2b
+<<<<<<< HEAD
 -->
 
 
+=======
+
+
+
+
+>>>>>>> melmonk/master
 Bulleted list
 \begin{itemize}[noitemsep,nolistsep,topsep=0pt]
 
@@ -97,7 +137,10 @@ Bulleted list
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> melmonk/master
 Numbered list
 \begin{enumerate}[noitemsep,nolistsep,topsep=0pt]
 
@@ -113,9 +156,14 @@ Numbered list
 We can reference a document section, see Lists in Section \ref{lists}.
 
 Citations: [@Love2002;@Love2002]
+<<<<<<< HEAD
 <!--citation key in .bib -->
 
 Love[-@Love2002]
+=======
+
+Love [-@Love2002]
+>>>>>>> melmonk/master
 
 
 #Figure from a file
@@ -123,7 +171,11 @@ You can use any file extension, including PDFs
 
 ![Here's my caption \label{fig:fig_example}](RMarkdownFLow.png)
 
+<<<<<<< HEAD
 ![Here's my caption \label{fig:fig_example2}](./Figures/RMarkdownFLow1.png)
+=======
+![Here's my caption 2 \label{fig:fig_example2}](./Figures/RMarkdownFLow1.png)
+>>>>>>> melmonk/master
 
 Figures are referenced using LaTeX syntax \ref{fig:fig_example}.
 
@@ -138,15 +190,25 @@ Now try adding your own picture to the directory, adding it in here, and referen
 
 You can embed an R code chunk like this:
 
+<<<<<<< HEAD
 ```{r cars, echo=FALSE, include=FALSE}
+=======
+```{r cars}
+>>>>>>> melmonk/master
 summary(cars)
+
+#adsflkasjfaslkdfj
 ```
 
 
-
+<<<<<<< HEAD
 Play witht the r code chunk options, echo=TRUE, include=FALSE, results='asis'
+=======
+Play with the r code chunk options, echo=TRUE, include=FALSE, results='asis'
+>>>>>>> melmonk/master
 
 
+\FloatBarrier
 
 \FloatBarrier
 
@@ -154,6 +216,7 @@ Play witht the r code chunk options, echo=TRUE, include=FALSE, results='asis'
 
 You can also embed plots, for example:
 
+<<<<<<< HEAD
 ```{r pressure, echo = FALSE, fig.cap="Figure of something  at $40^\\circ 10^\\prime$. \\label{fig:pressure}"}
 plot(pressure)
 ```
@@ -163,17 +226,35 @@ This is inlinemath mode for Latex $40^\circ 10^\prime$
 Note, you need extra \\s when using LaTeX syntax within an R code chunk, or when inserting a backslash in R markdown.  The same goes with percent signs and any other LaTeX reserved symbol. You can use a % $\%$
 
 \FloatBarrier
+=======
+```{r pressure, fig.cap="Figure of something  at $40^\\circ 10^\\prime$. \\label{fig:pressure}"}
+plot(pressure)
+```
+
+This is inline math mode for Latex  $40^\circ 10^\prime$  
+
+Note, you need extra \\s when using LaTeX syntax within an R code chunk, or when inserting a backslash in R markdown.  The same goes with percent signs and any other LaTeX reserved symbol. You can use  a %  $\%$ 
+>>>>>>> melmonk/master
 
 
 We can now reference Figure \ref{fig:pressure}.  Note where this text ends up.
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
+<<<<<<< HEAD
 
+=======
+\FloatBarrier
+>>>>>>> melmonk/master
 
 
 #Tables
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> melmonk/master
 ```{r, results='asis'}
 #, results='asis', echo=FALSE, include=FALSE, message=FALSE, warning=FALSE
 Tab = read.csv('Table_example.csv')
@@ -181,9 +262,17 @@ Tab = read.csv('Table_example.csv')
 Tab_example = xtable(Tab, 
                    caption=c('This is where you write your caption'),
                    label = 'tab:Table_example',
+<<<<<<< HEAD
                    digits = 1)
 
 print(Tab_example, include.rownames = FALSE, caption.placement = 'top', scalebox = 0.7)
+=======
+                   digits=0)  
+
+align(Tab_example) = 'lcrcrcrcrcrc'
+
+print(Tab_example, include.rownames = FALSE, caption.placement = 'top', scalebox=.7)
+>>>>>>> melmonk/master
 
 # print option to try, scalebox = 0.7
 # add alignment
@@ -203,6 +292,8 @@ align(Tab_example) = 'lcrcrrcr'
 ```
 
 
+
+
 Try changing the R chunk options above. 
 
 We can now reference Table \ref{tab:Table_example}.
@@ -219,6 +310,9 @@ Now, create a table!
 
 
 
+
+
+
 #Math mode
 
 You can use LaTeX math mode both inline and for inserting equations. It's handy for using inline math mode for management measure and lat/long.
@@ -228,6 +322,10 @@ Inline looks like this:  $SPR_{40\%}$
 
 To get degrees and minutes type: $40^\circ 10^\prime$   
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> melmonk/master
 
 #References
 

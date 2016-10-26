@@ -128,7 +128,7 @@
 }
 Change some of the YAML settings to see what happens.
 
-Notice, the down arrow at line 22. If you click this, you can hide the R
+Notice, the down arrow at line 25. If you click this, you can hide the R
 code chunk. This is helpful when working through a large document.
 
 On the right side of the R code chunk are additional options, Settings,
@@ -143,15 +143,27 @@ LaTeX)}\label{epmhasis-r-markdown-and-latex}
 \emph{Sebastes}\\
 \emph{Sebastes}
 
+<<<<<<< HEAD
 \emph{Sebastes} \textbf{Sebastes}\\
 \textbf{Sebastes}
+=======
+\emph{Sebastes}
+
+\textbf{\emph{Sebastes}}\\
+\textbf{Sebastes}\\
+\emph{\textbf{Sebastes}}
+>>>>>>> melmonk/master
 
 \section{Headers}\label{headers}
 
 \subsection{Subhead 2}\label{subhead-2}
 
+<<<<<<< HEAD
 \subsubsection*{Subhead 3}\label{subhead-3}
 \addcontentsline{toc}{subsubsection}{Subhead 3}
+=======
+\subsubsection{Subhead 3}\label{subhead-3}
+>>>>>>> melmonk/master
 
 \paragraph{Subhead 4}\label{subhead-4}
 
@@ -165,6 +177,39 @@ LaTeX)}\label{epmhasis-r-markdown-and-latex}
 
 \section{Lists}\label{lists}
 
+<<<<<<< HEAD
+=======
+R Markdown are finicky with spacing\ldots{}
+
+\begin{itemize}
+\tightlist
+\item
+  Item 1
+\item
+  Item 2
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Item 2a
+  \item
+    Item 2b
+  \end{itemize}
+\item
+  Item 1
+\item
+  Item 2
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Item 2a
+  \item
+    Item 2b
+  \end{itemize}
+\end{itemize}
+
+>>>>>>> melmonk/master
 Bulleted list
 
 \begin{itemize}[noitemsep,nolistsep,topsep=0pt]
@@ -192,7 +237,11 @@ We can reference a document section, see Lists in Section \ref{lists}.
 Citations: (Love et al. \protect\hyperlink{ref-Love2002}{2002},
 \protect\hyperlink{ref-Love2002}{2002})
 
+<<<<<<< HEAD
 Love(\protect\hyperlink{ref-Love2002}{2002})
+=======
+Love (\protect\hyperlink{ref-Love2002}{2002})
+>>>>>>> melmonk/master
 
 \section{Figure from a file}\label{figure-from-a-file}
 
@@ -207,7 +256,11 @@ You can use any file extension, including PDFs
 \begin{figure}[htbp]
 \centering
 \includegraphics{./Figures/RMarkdownFLow1.png}
+<<<<<<< HEAD
 \caption{Here's my caption \label{fig:fig_example2}}
+=======
+\caption{Here's my caption 2 \label{fig:fig_example2}}
+>>>>>>> melmonk/master
 \end{figure}
 
 Figures are referenced using LaTeX syntax \ref{fig:fig_example}.
@@ -221,7 +274,17 @@ referencing it.
 
 You can embed an R code chunk like this:
 
-Play witht the r code chunk options, echo=TRUE, include=FALSE,
+\begin{verbatim}
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+\end{verbatim}
+
+Play with the r code chunk options, echo=TRUE, include=FALSE,
 results=`asis'
 
 \FloatBarrier
@@ -237,20 +300,32 @@ You can also embed plots, for example:
 \label{fig:pressure}}
 \end{figure}
 
+<<<<<<< HEAD
 This is inlinemath mode for Latex \(40^\circ 10^\prime\)
+=======
+This is inline math mode for Latex \(40^\circ 10^\prime\)
+>>>>>>> melmonk/master
 
 Note, you need extra \textbackslash{}s when using LaTeX syntax within an
 R code chunk, or when inserting a backslash in R markdown. The same goes
 with percent signs and any other LaTeX reserved symbol. You can use a \%
 \(\%\)
 
+<<<<<<< HEAD
 \FloatBarrier
 
+=======
+>>>>>>> melmonk/master
 We can now reference Figure \ref{fig:pressure}. Note where this text
 ends up.
 
 Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
 chunk to prevent printing of the R code that generated the plot.
+<<<<<<< HEAD
+=======
+
+\FloatBarrier
+>>>>>>> melmonk/master
 
 \section{Tables}\label{tables}
 
@@ -259,6 +334,7 @@ chunk to prevent printing of the R code that generated the plot.
 \caption{This is where you write your caption} 
 \label{tab:Table_example}
 \scalebox{0.7}{
+<<<<<<< HEAD
 \begin{tabular}{rrrrrrrrrrr}
   \hline
 Sample & Test1 & Test2 & Test3 & Test4 & Test5 & Test6 & Test7 & Test8 & Test9 & Test10 \\ 
@@ -268,11 +344,23 @@ Sample & Test1 & Test2 & Test3 & Test4 & Test5 & Test6 & Test7 & Test8 & Test9 &
    5 & 34.0 & 3333333333.0 &  7 & 2395 & 5632 & 5542 & 1645 & 380.0 & 1263 & 6728 \\ 
    7 & 234.0 & 34.0 & 46 & 5619 & 6063 & 8973 & 9362 & 1870.0 & 7651 & 683 \\ 
    9 & 234.0 & 0.0 & 45 & 6531 & 6824 & 3609 & 7627 & 3363.0 & 1534 & 8333 \\ 
+=======
+\begin{tabular}{crcrcrcrcrc}
+  \hline
+Sample & Test1 & Test2 & Test3 & Test4 & Test5 & Test6 & Test7 & Test8 & Test9 & Test10 \\ 
+  \hline
+1 & 333000000000 & 97 & 45 & 7169 & 5656 & 2642 & 8534 & 9173 & 230 & 2733 \\ 
+  3 & 345 & 976 & 6 & 105 & 6382 & 2277 & 5848 & 7339495403 & 8613 & 5025 \\ 
+  5 & 34 & 3333333333 & 7 & 2395 & 5632 & 5542 & 1645 & 380 & 1263 & 6728 \\ 
+  7 & 234 & 34 & 46 & 5619 & 6063 & 8973 & 9362 & 1870 & 7651 & 683 \\ 
+  9 & 234 & 0 & 45 & 6531 & 6824 & 3609 & 7627 & 3363 & 1534 & 8333 \\ 
+>>>>>>> melmonk/master
    \hline
 \end{tabular}
 }
 \end{table}
 
+<<<<<<< HEAD
 \begin{table}[ht]
 \centering
 \caption{Taiwan data} 
@@ -299,6 +387,8 @@ spp & Year & Catch\_KG & AreaSwept\_km2 & Vessel & Lat & Lon \\
 \end{tabular}
 \end{table}
 
+=======
+>>>>>>> melmonk/master
 Try changing the R chunk options above.
 
 We can now reference Table \ref{tab:Table_example}.
